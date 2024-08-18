@@ -8,6 +8,13 @@ import { Appointment } from '../models/appointment';
 })
 export class AppointmentListComponent {
 
-  appointments:Appointment[] = [];
+  newAppointmentTitle:string = "";
+  newAppointmentDate:Date = new Date();
+
+  appointments:Appointment[] = []
+
+  addAppointment(){
+    alert(this.newAppointmentTitle+" "+this.newAppointmentDate)
+  }
 
 }
