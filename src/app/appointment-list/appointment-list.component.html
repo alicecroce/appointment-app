@@ -12,5 +12,8 @@
 </div>
 
 <ul>
-  <li>test</li>
+  <li *ngFor="let appointment of appointments">
+    {{ appointment.title }}
+    {{ appointment.date | date : "dd.MM.yyy" }}
+  </li>
 </ul>
