@@ -13,6 +13,7 @@ export class AppointmentListComponent {
 
   appointments:Appointment[] = []
 
+  //Aggiungo un impegno
   addAppointment(){
     if(this.newAppointmentTitle.trim().length&&this.newAppointmentDate){
       let newAppointment: Appointment={
@@ -21,16 +22,15 @@ export class AppointmentListComponent {
         date:this.newAppointmentDate
       }
 
-      this.appointments.push(newAppointment);
+      this.appointments.push(newAppointment);//push aggiunge
 
       this.newAppointmentTitle="";
       this.newAppointmentDate=new Date();
-
-      alert(this.appointments.length)
     }
   }
 
+   //Rimuovo un impegno
   deleteAppointment(index:number){
-    
+    this.appointments.splice(index,1)//splice elimina (index=dal numero uno, 1= solo un elemento)
   }
 }
