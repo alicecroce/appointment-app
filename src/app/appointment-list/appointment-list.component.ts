@@ -16,7 +16,10 @@ export class AppointmentListComponent implements OnInit {
   appointments:Appointment[] = []
 
   ngOnInit(): void {//viene invocato quando quando il componente viene inizializzato/avviamo o ricarichiamo lìapplicazione)
-    throw new Error('Method not implemented.');
+    let savedAppointments=localStorage.getItem('appointments');
+
+    this.appointments=savedAppointments?JSON.parse(savedAppointments):[]
+    //ho salvato l'appuntamento? se si archivialo nel json se no crea un array vuot
   }
 
   //Aggiungo un impegno
