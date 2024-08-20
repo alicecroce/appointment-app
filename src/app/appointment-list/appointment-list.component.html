@@ -31,12 +31,19 @@
       </div>
     </div>
   </div>
-</div>
 
-<ul>
-  <li *ngFor="let appointment of appointments; index as i">
-    {{ appointment.title }}
-    {{ appointment.date | date : "dd.MM.yyy" }}
-    <button (click)="deleteAppointment(i)">Delete</button>
-  </li>
-</ul>
+  <h2 class="text-center mt-5">Appointments</h2>
+
+  <ul class="list-group mt-3">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let appointment of appointments; index as i"
+    >
+      {{ appointment.title }}
+      {{ appointment.date | date : "dd.MM.yyy" }}
+      <button class="btn btn-danger" (click)="deleteAppointment(i)">
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>
